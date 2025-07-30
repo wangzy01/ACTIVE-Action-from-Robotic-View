@@ -1,5 +1,3 @@
-Of course. Here is the updated README with the dataset split information added to the "Dataset" section.
-
 # ACTIVE: Action from Robotic View 🤖
 
 ### [➡️ download the dataset from Hugging Face ⬅️](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
