@@ -1,9 +1,10 @@
+Of course. Here is the updated README with the dataset split information added to the "Dataset" section.
+
 # ACTIVE: Action from Robotic View 🤖
+
 ### [➡️ download the dataset from Hugging Face ⬅️](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
 
 This repository contains the official PyTorch implementation and dataset for our paper: **"Recognizing Actions from Robotic View for Natural Human-Robot Interaction"**, accepted at ICCV 2025.
-
-![pipeline](assets/pipeline.png)
 
 -----
 
@@ -59,9 +60,19 @@ For a detailed environment specification, please see the `requirements.yml` file
 
 ## 📊 Dataset
 
-The **ACTIVE** dataset is a core contribution of this work. To download it, please visit our [official project page](https://www.google.com/search?q=https://your-project-page-url) and follow the instructions to request access.
+[download the dataset from Hugging Face](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
 
-Once downloaded, place the dataset in a `data/` directory or update the data path in the configuration files.
+### Evaluation Protocols
+
+For reproducibility, we follow a standard **Cross-Subject Evaluation** protocol. The 80 participants are split as follows:
+
+  * **Training Set:** 53 subjects
+  * **Testing Set:** 27 subjects
+
+The participant IDs used for the **training group** are:
+`2, 3, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28, 30, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 52, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 76, 77, 78, 79`
+
+The remaining 27 subjects are used for testing.
 
 -----
 
