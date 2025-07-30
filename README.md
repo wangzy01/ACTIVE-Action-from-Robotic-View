@@ -6,6 +6,8 @@ Of course. Here is the updated README with the dataset split information added t
 
 This repository contains the official PyTorch implementation and dataset for our paper: **"Recognizing Actions from Robotic View for Natural Human-Robot Interaction"**, accepted at ICCV 2025.
 
+![pipeline](assets/pipeline.png)
+
 -----
 
 ## 📜 About The Project
