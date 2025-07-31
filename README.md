@@ -1,12 +1,16 @@
 # ACTIVE: Action from Robotic View 🤖
 
-### [➡️ download the dataset from Hugging Face ⬅️](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
+[![🌐 Project Page](https://img.shields.io/badge/🌐-Project%20Page-blue?style=for-the-badge)](https://wangzy01.github.io/ACTIVE/index.html) &nbsp; [![📄 arXiv](https://img.shields.io/badge/📄-arXiv-red?style=for-the-badge)](https://arxiv.org/abs/2507.22522) &nbsp; [![🤗 Download Dataset](https://img.shields.io/badge/Download%20Dataset-grey?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
 
 This repository contains the official PyTorch implementation and dataset for our paper: **"Recognizing Actions from Robotic View for Natural Human-Robot Interaction"**, accepted at ICCV 2025.
 
 ![pipeline](assets/pipeline.png)
 
 -----
+
+
+
+
 
 ## 📜 About The Project
 
@@ -60,7 +64,7 @@ For a detailed environment specification, please see the `requirements.yml` file
 
 ## 📊 Dataset
 
-[download the dataset from Hugging Face](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
+[![Download Dataset](https://img.shields.io/badge/-Download%20Dataset-lightgrey?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
 
 ### Evaluation Protocols
 
