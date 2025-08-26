@@ -113,5 +113,10 @@ This work is built upon the foundational codebase of [PSTNet](https://github.com
 If you use our dataset or model in your research, please consider citing our paper:
 
 ```bibtex
-Coming soon.
+@article{wang2025recognizing,
+  title={Recognizing Actions from Robotic View for Natural Human-Robot Interaction},
+  author={Wang, Ziyi and Li, Peiming and Liu, Hong and Deng, Zhichao and Wang, Can and Liu, Jun and Yuan, Junsong and Liu, Mengyuan},
+  journal={arXiv preprint arXiv:2507.22522},
+  year={2025}
+}
 ```
