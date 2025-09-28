@@ -84,21 +84,65 @@ The remaining 27 subjects are used for testing.
 
 ### Training
 
-To train the **ACTIVE-PC** model on the ACTIVE dataset, run the following command. Ensure the dataset path and configuration file are set correctly.
+`active-train.py` **trains** on the training split and **evaluates** on the test split at the end of **every epoch**. CUDA is required (the script sets `device='cuda'`).
 
 ```bash
-# Example training command
-python train.py --config cfgs/active_pc_config.yaml --data_path /path/to/your/active_dataset
+python active-train.py \
+  --data-path /path/to/ACTIVE \
+  --data-meta /path/to/split_or_meta_file \
+  --output-dir ./outputs/activepc \
 ```
 
-### Evaluation
-
-To evaluate a pre-trained model, specify the path to your model checkpoint (`.pth` file).
+**Resume training:**
 
 ```bash
-# Example evaluation command
-python test.py --config cfgs/active_pc_config.yaml --data_path /path/to/your/active_dataset --checkpoint /path/to/your/model.pth
+python active-train.py \
+  --data-path /path/to/ACTIVE \
+  --data-meta /path/to/split_or_meta_file \
+  --output-dir ./outputs/activepc \
+  --resume ./outputs/activepc/checkpoint.pth
 ```
+
+
+### Testing (during training)
+
+No separate command is required to “enable testing.” The script **always runs evaluation** on the test split each epoch and logs:
+
+
+### Test-only (how to implement)
+
+`active-train.py` does not include a built-in “test-only” CLI mode. If you want to evaluate a checkpoint without running another training epoch, add a tiny flag and early return:
+
+1. **Add an argument** in `parse_args()`:
+
+```python
+parser.add_argument('--test-only', action='store_true',
+                    help='Run evaluation on the test split and exit')
+```
+
+2. **Short-circuit in `main(args)` after loading the model & checkpoint** and after building `data_loader_test`:
+
+```python
+if args.test_only:
+    if not args.resume:
+        logging.warning('No --resume provided; evaluating random-initialized weights.')
+    evaluate(model, criterion, data_loader_test, device=device)
+    return
+```
+
+Then you can run:
+
+```bash
+python active-train.py \
+  --data-path /path/to/ACTIVE \
+  --data-meta /path/to/split_or_meta_file \
+  --model ACTIVEPC \
+  --resume /path/to/model_or_checkpoint.pth \
+  --test-only
+```
+
+This will load the checkpoint and only run the evaluation once on the test split, then exit.
+
 
 -----
 
