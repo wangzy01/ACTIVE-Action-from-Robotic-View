@@ -1,14 +1,12 @@
 # ACTIVE: Action from Robotic View 🤖
 
-[![🌐 Project Page](https://img.shields.io/badge/🌐-Project%20Page-blue?style=for-the-badge)](https://wangzy01.github.io/ACTIVE/index.html) &nbsp; [![📄 arXiv](https://img.shields.io/badge/📄-arXiv-red?style=for-the-badge)](https://arxiv.org/abs/2507.22522) &nbsp; [![🤗 Download Dataset](https://img.shields.io/badge/Download%20Dataset-grey?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
+[![🌐 Project Page](https://img.shields.io/badge/🌐-Project%20Page-blue?style=for-the-badge)](https://wangzy01.github.io/ACTIVE/index.html) &nbsp; [![📄 arXiv](https://img.shields.io/badge/📄-arXiv-red?style=for-the-badge)](https://arxiv.org/abs/2507.22522) &nbsp; [![🤗 Download Dataset](https://img.shields.io/badge/HuggingFace-Download-grey?style=for-the-badge&logo=huggingface&logoColor=white)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE) &nbsp; [![Baidu Netdisk](https://img.shields.io/badge/Baidu%20Netdisk-Code%3A%20Ks6T-blue?style=for-the-badge)](https://pan.baidu.com/s/1N1agrCKDNMvQNP7C7jMDeg?pwd=Ks6T)
 
 This repository contains the official PyTorch implementation and dataset for our paper: **"Recognizing Actions from Robotic View for Natural Human-Robot Interaction"**, accepted at ICCV 2025.
 
 ![pipeline](assets/pipeline.png)
 
 -----
-
-
 
 
 
@@ -64,7 +62,9 @@ For a detailed environment specification, please see the `requirements.yml` file
 
 ## 📊 Dataset
 
-[![Download Dataset](https://img.shields.io/badge/-Download%20Dataset-lightgrey?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE)
+You can download the dataset from either **Hugging Face** or **Baidu Netdisk**:
+
+[![Download Dataset HuggingFace](https://img.shields.io/badge/HuggingFace-Download-lightgrey?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE) &nbsp; [![Download Dataset Baidu](https://img.shields.io/badge/Baidu%20Netdisk-Code%3A%20Ks6T-blue?style=for-the-badge)](https://pan.baidu.com/s/1N1agrCKDNMvQNP7C7jMDeg?pwd=Ks6T)
 
 ### Evaluation Protocols
 
