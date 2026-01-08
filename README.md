@@ -66,6 +66,37 @@ You can download the dataset from either **Hugging Face** or **Baidu Netdisk**:
 
 [![Download Dataset HuggingFace](https://img.shields.io/badge/HuggingFace-Download-lightgrey?style=for-the-badge&logo=huggingface)](https://huggingface.co/datasets/ACTIVE2750/ACTIVE) &nbsp; [![Download Dataset Baidu](https://img.shields.io/badge/Baidu%20Netdisk-Code%3A%20Ks6T-blue?style=for-the-badge)](https://pan.baidu.com/s/1N1agrCKDNMvQNP7C7jMDeg?pwd=Ks6T)
 
+
+### File Naming Convention
+
+The video files in the dataset follow the format `PxxxSxxxAxxxRxxx`. Each component represents:
+
+| **Component** | **Meaning**    | **Description**                       |
+| ------------- | -------------- | ------------------------------------- |
+| **P**         | **Person**     | Subject ID (e.g., `P002` is Person 2) |
+| **S**         | **Scene**      | Scene ID                              |
+| **A**         | **Action**     | Action Label                          |
+| **R**         | **Repetition** | Repetition Count                      |
+
+Example: `P002S003A001R001` means Person 2, Scene 3, Action 1, Repetition 1.
+
+### Data Preparation (Meta Files)
+
+The training script (`active-train.py`) requires a meta file path (passed via `--data-meta`). **This file is not included in the raw dataset download**; you should generate it based on the downloaded files.
+
+Meta File Format:
+
+It is a text file where each line contains the video name and the frame count, separated by a space.
+
+Plaintext
+
+```
+P002S003A001R001 24
+P002S003A001R002 30
+...
+```
+
+
 ### Evaluation Protocols
 
 For reproducibility, we follow a standard **Cross-Subject Evaluation** protocol. The 80 participants are split as follows:
