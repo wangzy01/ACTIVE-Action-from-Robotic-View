@@ -8,6 +8,10 @@ This repository contains the official PyTorch implementation and dataset for our
 
 -----
 
+> **Update (Feb 2026):** We apologize that the initial release had an incorrect data split configuration due to code organization issues. This has now been corrected. We have also included the pre-generated meta file `datasets/active.list` for convenience.
+
+-----
+
 
 
 ## 📜 About The Project
@@ -82,17 +86,15 @@ Example: `P002S003A001R001` means Person 2, Scene 3, Action 1, Repetition 1.
 
 ### Data Preparation (Meta Files)
 
-The training script (`active-train.py`) requires a meta file path (passed via `--data-meta`). **This file is not included in the raw dataset download**; you should generate it based on the downloaded files.
+The training script (`active-train.py`) requires a meta file path (passed via `--data-meta`). We provide a pre-generated meta file `datasets/active.list` in this repository.
 
 Meta File Format:
 
 It is a text file where each line contains the video name and the frame count, separated by a space.
 
-Plaintext
-
 ```
-P002S003A001R001 24
-P002S003A001R002 30
+P001S003A001R001 24
+P001S003A001R002 16
 ...
 ```
 
@@ -101,13 +103,13 @@ P002S003A001R002 30
 
 For reproducibility, we follow a standard **Cross-Subject Evaluation** protocol. The 80 participants are split as follows:
 
-  * **Training Set:** 53 subjects
-  * **Testing Set:** 27 subjects
+  * **Training Set:** 57 subjects
+  * **Testing Set:** 23 subjects
 
 The participant IDs used for the **training group** are:
-`2, 3, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28, 30, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 52, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 76, 77, 78, 79`
+`1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 30, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 52, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 76, 77, 78, 79`
 
-The remaining 27 subjects are used for testing.
+The remaining 23 subjects are used for testing.
 
 -----
 
@@ -120,8 +122,8 @@ The remaining 27 subjects are used for testing.
 ```bash
 python active-train.py \
   --data-path /path/to/ACTIVE \
-  --data-meta /path/to/split_or_meta_file \
-  --output-dir ./outputs/activepc \
+  --data-meta datasets/active.list \
+  --output-dir ./outputs/activepc
 ```
 
 **Resume training:**
@@ -129,7 +131,7 @@ python active-train.py \
 ```bash
 python active-train.py \
   --data-path /path/to/ACTIVE \
-  --data-meta /path/to/split_or_meta_file \
+  --data-meta datasets/active.list \
   --output-dir ./outputs/activepc \
   --resume ./outputs/activepc/checkpoint.pth
 ```

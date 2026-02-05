@@ -139,7 +139,7 @@ class MultilevelConv(nn.Module):
         new_xyzs_levels = {1: [], 2: [], 3: []}
         new_features_levels = {1: [], 2: [], 3: []}
 
-        npoints_hierarchy = [N//8, N//16, N//32]   
+        npoints_hierarchy = [96, 48, 24]   # Fixed hierarchy for num_points=768
  
         for t in range(self.temporal_kernel_size//2, len(xyzs)-self.temporal_kernel_size//2, self.temporal_stride):
             temporal_window = range(t - self.temporal_kernel_size//2, t + self.temporal_kernel_size//2 + 1)
@@ -177,12 +177,11 @@ class MultilevelConv(nn.Module):
 
                     scaling = self.scale_xyz.to(device)  # (1, 1, 3)
 
+                    # Apply EEQ (Elastic Ellipse Query) scaling
+                    neighbor_xyz = neighbor_xyz * scaling
+                    sampled_xyz = sampled_xyz * scaling
 
-                    neighbor_xyz_scaled = neighbor_xyz * scaling
-                    sampled_xyz_scaled = sampled_xyz * scaling
-
-
-                    idx = point_utils.ball_query(self.r, self.k, neighbor_xyz_scaled, sampled_xyz_scaled)  # (B, n_points_level, k)
+                    idx = point_utils.ball_query(self.r, self.k, neighbor_xyz, sampled_xyz)  # (B, n_points_level, k)
  
                     idx = idx.int().to(device)
             
